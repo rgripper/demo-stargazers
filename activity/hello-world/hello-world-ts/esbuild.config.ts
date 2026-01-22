@@ -1,5 +1,5 @@
 import esbuild from 'esbuild';
-import { execSync } from 'child_process';
+import { execSync } from 'node:child_process';
 
 function getWitJson(witPath = './wit') {
     const cmd = `wasm-tools component wit --json ${witPath}`;
@@ -40,7 +40,7 @@ const external = getRootImports(witJson);
 console.log("Excluding imports:", external);
 
 esbuild.build({
-    entryPoints: ['src/index.js'],
+    entryPoints: ['src/index.ts'],
     bundle: true,
     platform: 'browser',
     outfile: 'bundle/index.bundled.js',

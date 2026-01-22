@@ -3,12 +3,13 @@
   "type": "module",
   "devDependencies": {
     "@bytecodealliance/componentize-js": "0.19.0",
+    "@types/node": "^25.0.10",
     "esbuild": "^0.25.4"
   },
   "scripts": {
-    "build:esbuild": "node esbuild.config.js",
-    "build:componentize": "node call-componentize.js",
-    "build": "npm run build:esbuild && npm run build:componentize",
+    "build:esbuild": "node esbuild.config.ts",
+    "build:componentize": "node call-componentize.ts",
+    "build": "pnpm run build:esbuild && pnpm run build:componentize",
     "test:submit": "obelisk client execution submit --follow 'stargazers:hello-world/greeter.greet' '[\"World\"]'"
   },
   "componentMeta": {

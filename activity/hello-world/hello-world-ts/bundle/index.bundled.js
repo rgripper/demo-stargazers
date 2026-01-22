@@ -1,4 +1,4 @@
-// src/index.js
+// src/index.ts
 import { getEnvironment } from "wasi:cli/environment@0.2.3";
 var greeter = {
   greet(name) {

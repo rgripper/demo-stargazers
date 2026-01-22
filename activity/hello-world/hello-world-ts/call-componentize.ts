@@ -1,10 +1,8 @@
-import { readFile, writeFile } from 'node:fs/promises';
-import { resolve } from 'node:path';
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { resolve, delimiter } from 'node:path';
 import { componentize } from '@bytecodealliance/componentize-js';
-import { execSync } from 'child_process';
-import { delimiter } from 'path';
-import { env, platform } from 'process';
-import { readFileSync } from 'fs';
+import { execSync } from 'node:child_process';
+import { env, platform } from 'node:process';
 
 const jsSource = await readFile('bundle/index.bundled.js', 'utf8');
 
@@ -25,7 +23,7 @@ try {
   console.debug("Using bundled wizer");
 }
 
-const packageJson = JSON.parse(readFileSync(new URL('./package.json', import.meta.url)));
+const packageJson = JSON.parse(await readFile(new URL('./package.json', import.meta.url)));
 
 const { component } = await componentize(jsSource, {
   debugBindings: false,
@@ -37,4 +35,5 @@ const { component } = await componentize(jsSource, {
 });
 const pkgName = packageJson.name;
 
+await mkdir('dist', { recursive: true });
 await writeFile(`dist/${pkgName}.wasm`, component);
