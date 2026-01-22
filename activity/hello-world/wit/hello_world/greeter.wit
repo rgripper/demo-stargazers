@@ -1,0 +1,9 @@
+package stargazers:hello-world;
+
+interface greeter {
+    greet: func(name: string) -> result<string, string>;
+}
+
+world exports {
+    export greeter;
+}

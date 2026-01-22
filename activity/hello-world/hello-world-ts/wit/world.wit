@@ -1,0 +1,8 @@
+package root:component;
+
+world root {
+    import wasi:cli/environment@0.2.3;
+    import obelisk:log/log@1.0.0;
+
+    include stargazers:hello-world/exports;
+}
