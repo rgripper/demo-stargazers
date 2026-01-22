@@ -61,12 +61,12 @@ Reimplementation in [JavaScript](./activity/llm/openai-js/) and [Go](./activity/
 The webhook collects events sent by GitHub when a user stars one of the configured repositories, then triggers the workflow execution.
 
 Follow the prerequisites section of the [webhook README](./webhook/webhook-rs/README.md).
-Reimplementation in [JavaScript](./webhook/webhook-js/) and [Go](./webhook/webhook-go/) is available for comparison.
+Reimplementation in [JavaScript](./webhook/webhook-js/) is available for comparison.
 
 #### Workflow
 [Workflow](./workflow/stargazers/workflow-rs/) orchestrates all the activities, is triggered by the webhook.
 
-Reimplementation in [JavaScript](./workflow/stargazers/workflow-js/) and [Go](./workflow/stargazers/workflow-go/) is available for comparison.
+Reimplementation in [JavaScript](./workflow/stargazers/workflow-js/) is available for comparison.
 
 ### Running
 
@@ -116,9 +116,5 @@ To build JavaScript components use
 just js
 ```
 
-To build Go components use
-```sh
-just go
-```
 
 Make sure to use tools and versions as specified in [dev-deps.txt](./dev-deps.txt).
