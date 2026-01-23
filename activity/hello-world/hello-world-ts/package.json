@@ -2,11 +2,16 @@
   "name": "hello-world-ts",
   "type": "module",
   "devDependencies": {
-    "@bytecodealliance/componentize-js": "0.19.0",
+    "@bytecodealliance/componentize-js": "^0.19.3",
+    "@bytecodealliance/jco": "^1.15.4",
     "@types/node": "^25.0.10",
-    "esbuild": "^0.25.4"
+    "esbuild": "^0.25.4",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "zod": "^4.3.6"
   },
   "scripts": {
+    "types": "jco guest-types ./wit -o ./types",
     "build:esbuild": "node esbuild.config.ts",
     "build:componentize": "node call-componentize.ts",
     "build": "pnpm run build:esbuild && pnpm run build:componentize",

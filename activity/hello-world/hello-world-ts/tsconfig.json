@@ -1,15 +1,15 @@
 {
+  "extends": "../../../tsconfig.json",
   "compilerOptions": {
     "target": "ES2022",
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "types": ["node"],
+    "types": ["@types/node", "./types/wit.d.ts"],
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "outDir": "./dist-ts",
-    "rootDir": "./src",
-    "declaration": false
+    "rootDir": "./src"
   },
-  "include": ["src/**/*"]
+  "include": ["src"]
 }
